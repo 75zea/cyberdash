@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberDash — Dashboard Sécurité</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">🛡️ CyberDash</div>
+  <div id="clock" class="clock"></div>
+  <div class="user">LXC Debian 13</div>
+</header>
+
+<main class="grid">
+
+  <!-- Widget : Actus cyber -->
+  <section class="widget news">
+    <div class="widget-header">
+      <h2>📰 Actus cyber attaques</h2>
+      <button id="refresh-news" class="btn-refresh">Rafraîchir</button>
+    </div>
+    <div id="news-list" class="news-list">
+      <div class="news-item loading">Chargement des actus…</div>
+    </div>
+  </section>
+
+  <!-- Widget : Outils métiers -->
+  <section class="widget tools">
+    <div class="widget-header">
+      <h2>🧰 Outils utiles</h2>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-icon">🔍</div>
+        <div class="tool-name">Reconnaissance</div>
+        <div class="tool-desc">Nmap, theHarvester, Shodan, Recon-ng</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">🕷️</div>
+        <div class="tool-name">Analyse vuln</div>
+        <div class="tool-desc">Nuclei, OpenVAS, Nessus, Nikto</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">📦</div>
+        <div class="tool-name">Exploitation</div>
+        <div class="tool-desc">Metasploit, Cobalt Strike, BloodHound</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">🔐</div>
+        <div class="tool-name">Mots de passe</div>
+        <div class="tool-desc">Hashcat, John the Ripper, Hydra, Mimikatz</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">🕵️</div>
+        <div class="tool-name">Forensique</div>
+        <div class="tool-desc">Volatility, Autopsy, Wireshark, binwalk</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">📡</div>
+        <div class="tool-name">Réseau</div>
+        <div class="tool-desc">Nmap, Masscan, ZMap, Hping3, Bettercap</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Widget : Liens rapides -->
+  <section class="widget links">
+    <div class="widget-header">
+      <h2>⚡ Liens rapides</h2>
+    </div>
+    <div class="link-grid">
+      <a href="https://www.cisa.gov/" target="_blank" class="link-card">
+        <span class="link-icon">🇺🇸</span>
+        <span>CISA</span>
+      </a>
+      <a href="https://www.cert.ssi.gouv.fr/" target="_blank" class="link-card">
+        <span class="link-icon">🇫🇷</span>
+        <span>CERT-FR (ANSSI)</span>
+      </a>
+      <a href="https://www.bleepingcomputer.com/" target="_blank" class="link-card">
+        <span class="link-icon">📰</span>
+        <span>BleepingComputer</span>
+      </a>
+      <a href="https://thehackernews.com/" target="_blank" class="link-card">
+        <span class="link-icon">🐦</span>
+        <span>The Hacker News</span>
+      </a>
+      <a href="https://www.virustotal.com/" target="_blank" class="link-card">
+        <span class="link-icon">🦠</span>
+        <span>VirusTotal</span>
+      </a>
+      <a href="https://abuse.ch/" target="_blank" class="link-card">
+        <span class="link-icon">🚫</span>
+        <span>abuse.ch</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Widget : Statut système -->
+  <section class="widget status">
+    <div class="widget-header">
+      <h2>🖥️ Statut LXC</h2>
+    </div>
+    <div class="status-grid">
+      <div class="stat-item">
+        <div class="stat-value" id="stat-uptime">—</div>
+        <div class="stat-label">Uptime</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="stat-load">—</div>
+        <div class="stat-label">Charge CPU</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="stat-mem">—</div>
+        <div class="stat-label">Mémoire</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="stat-disk">—</div>
+        <div class="stat-label">Disque</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>CyberDash — Dashboard sécurité · Déployé sur Proxmox LXC Debian 13</div>
+  <div id="last-update">Dernière mise à jour : —</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
